@@ -2,9 +2,8 @@ package vn.vpgh.phoneshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import vn.vpgh.phoneshop.domain.User;
 import vn.vpgh.phoneshop.service.UserService;
 
 @Controller
@@ -15,11 +14,16 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping("/")
-    public String getHomePage(Model model) {
-        String test = this.userService.handleHello();
-        model.addAttribute("test", test);
-        return "hello";
+    @RequestMapping("/admin/user")
+    public String createUserPage(Model model) {
+        model.addAttribute("newUser", new User());
+        return "/admin/user/create";
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.POST)
+    public String testPage(Model model, @ModelAttribute("newUser") User user1) {
+        System.out.println(user1);
+        return "test";
     }
 }
 

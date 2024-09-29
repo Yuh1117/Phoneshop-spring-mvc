@@ -18,7 +18,8 @@
     <div class="row">
         <div class="col-md-6 col-12 mx-auto">
             <h1 class="text-center">Create a user</h1>
-            <form:form action="/test" method="post" modelAttribute="newUser">
+            <%--@elvariable id="newUser" type=""--%>
+            <form:form action="/admin/user/test" method="post" modelAttribute="newUser">
                 <div class="mb-3">
                     <label class="form-label">Email:</label>
                     <form:input type="email" class="form-control" path="email"/>

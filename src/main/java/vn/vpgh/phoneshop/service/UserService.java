@@ -3,6 +3,7 @@ package vn.vpgh.phoneshop.service;
 import org.springframework.stereotype.Service;
 import vn.vpgh.phoneshop.domain.User;
 import vn.vpgh.phoneshop.repository.UserRepository;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -15,4 +16,12 @@ public class UserService {
     public User handleSaveUser(User user) {
         return this.userRepository.save(user);
     }
+
+    public List<User> getAllUsers(){
+         return this.userRepository.findAll();
+    }
+
+    public List<User> getAllUsersByEmail(String email){
+        return this.userRepository.findByEmail(email);
+   }
 }

@@ -1,5 +1,6 @@
 package vn.vpgh.phoneshop.controller;
 
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,10 @@ public class UserController {
 
     @RequestMapping("/")
     public String homePage(Model model) {
+        List<User> arrUsers = this.userService.getAllUsersByEmail("test@example.us");
+        for (User user : arrUsers) {
+            System.out.println(user);
+        }
         return "index";
     }
 

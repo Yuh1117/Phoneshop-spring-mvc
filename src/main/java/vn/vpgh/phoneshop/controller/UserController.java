@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import vn.vpgh.phoneshop.domain.User;
 import vn.vpgh.phoneshop.repository.UserRepository;
 import vn.vpgh.phoneshop.service.UserService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
@@ -32,6 +35,13 @@ public class UserController {
         return "/admin/user/table-user";
     }
 
+    @RequestMapping("/admin/user/{id}")
+    public String getUserDetailPage(Model model, @PathVariable long id) {
+        User user = this.userService.getUserById(id);
+        model.addAttribute("user", user);
+        return "/admin/user/user-detail";
+    }
+
     @RequestMapping("/admin/user/create")
     public String getCreateUserPage(Model model) {
         model.addAttribute("newUser", new User());
@@ -44,4 +54,3 @@ public class UserController {
         return "redirect:/admin/user";
     }
 }
-

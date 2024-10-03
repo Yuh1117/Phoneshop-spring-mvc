@@ -6,7 +6,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Create Users</title>
+                <title>Update User</title>
                 <!-- Latest compiled and minified CSS -->
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
                 <!-- Latest compiled JavaScript -->
@@ -25,16 +25,16 @@
                                     <path
                                         d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
                                 </svg></a>
-                            <h1 class="text-center">Create a user</h1>
+                            <h1 class="text-center">Update information</h1>
                             <%--@elvariable id="newUser" type="" --%>
-                                <form:form action="/admin/user/create" method="post" modelAttribute="newUser">
-                                    <div class="mb-3">
-                                        <label class="form-label">Email:</label>
-                                        <form:input type="email" class="form-control" path="email" />
+                                <form:form action="/admin/user/update" method="post" modelAttribute="currentUser">
+                                    <div class="mb-3 d-none">
+                                        <label class="form-label">ID:</label>
+                                        <form:input type="text" class="form-control" path="id" />
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Password:</label>
-                                        <form:input type="password" class="form-control" path="password" />
+                                        <label class="form-label">Email:</label>
+                                        <form:input type="email" class="form-control" path="email" disabled="true" />
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Full Name:</label>
@@ -48,7 +48,7 @@
                                         <label class="form-label">Address:</label>
                                         <form:input type="text" class="form-control" path="address" />
                                     </div>
-                                    <button type="submit" class="btn btn-primary form-control">Create</button>
+                                    <button type="submit" class="btn btn-primary form-control">Save</button>
                                 </form:form>
                         </div>
                     </div>

@@ -19,7 +19,12 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-12 mx-auto">
-                            <a href="/admin/user" class="btn btn-secondary">Back</a>
+                            <a href="/admin/user" class="btn btn-outline-secondary"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                                </svg></a>
                             <div class="card rounded-5 my-3">
                                 <div class="card-header fs-2 fw-medium rounded-top-5 text-center">
                                     User information
@@ -33,7 +38,10 @@
                                             <span class="fw-medium">Email:</span> ${user.email}
                                         </li>
                                         <li class="list-group-item">
-                                            <span class="fw-medium">FullName:</span> ${user.fullName}
+                                            <span class="fw-medium">Full Name:</span> ${user.fullName}
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="fw-medium">Phone:</span> ${user.phone}
                                         </li>
                                         <li class="list-group-item">
                                             <span class="fw-medium">Address:</span> ${user.address}

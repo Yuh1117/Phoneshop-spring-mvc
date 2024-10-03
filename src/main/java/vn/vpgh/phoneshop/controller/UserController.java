@@ -9,7 +9,7 @@ import vn.vpgh.phoneshop.repository.UserRepository;
 import vn.vpgh.phoneshop.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
@@ -53,4 +53,24 @@ public class UserController {
         this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
     }
+
+    @RequestMapping("/admin/user/update/{id}")
+    public String getUpdateUserPage(Model model, @PathVariable long id) {
+        User currentUser = this.userService.getUserById(id);
+        model.addAttribute("currentUser", currentUser);
+        return "/admin/user/update";
+    }
+
+    @PostMapping("/admin/user/update")
+    public String handleUpdateUser(Model model, @ModelAttribute("currentUser") User currentUser) {
+        User user = this.userService.getUserById(currentUser.getId());
+        if (user != null) {
+            user.setFullName(currentUser.getFullName());
+            user.setPhone(currentUser.getPhone());
+            user.setAddress(currentUser.getAddress());
+            this.userService.handleSaveUser(user);
+        }
+        return "redirect:/admin/user";
+    }
+
 }

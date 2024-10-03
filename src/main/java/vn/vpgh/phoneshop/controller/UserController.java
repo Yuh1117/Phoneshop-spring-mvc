@@ -10,6 +10,7 @@ import vn.vpgh.phoneshop.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class UserController {
@@ -70,6 +71,19 @@ public class UserController {
             user.setAddress(currentUser.getAddress());
             this.userService.handleSaveUser(user);
         }
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/delete/{id}")
+    public String getDeleteUserPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        model.addAttribute("newUser", new User());
+        return "/admin/user/delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String handleDelteUser(Model model, @ModelAttribute("newUser") User user) {
+        this.userService.deleteUserById(user.getId());
         return "redirect:/admin/user";
     }
 

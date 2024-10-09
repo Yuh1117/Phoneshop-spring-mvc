@@ -22,10 +22,6 @@ public class UserController {
 
     @RequestMapping("/")
     public String gethomePage(Model model) {
-        List<User> arrUsers = this.userService.getAllUsersByEmail("test@example.us");
-        for (User user : arrUsers) {
-            System.out.println(user);
-        }
         return "index";
     }
 

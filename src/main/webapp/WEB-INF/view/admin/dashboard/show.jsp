@@ -18,7 +18,7 @@
                 <jsp:include page="../layout/header.jsp" />
                 <div id="layoutSidenav">
                     <jsp:include page="../layout/sidebar.jsp" />
-                    <div id="layoutSidenav_content">
+                    <div id="layoutSidenav_content" class="bg-light">
                         <main>
                             <div class="container-fluid px-4">
                                 <h1 class="mt-4">Dashboard</h1>

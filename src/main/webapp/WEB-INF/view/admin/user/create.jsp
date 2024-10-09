@@ -1,58 +1,75 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+            <!DOCTYPE html>
             <html lang="en">
 
             <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Create New User</title>
-                <!-- Latest compiled and minified CSS -->
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-                <!-- Latest compiled JavaScript -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-                <!-- <link href="/css/demo.css" rel="stylesheet"> -->
+                <meta charset="utf-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                <title>Manage Users</title>
+                <link href="/css/styles.css" rel="stylesheet" />
+                <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
             </head>
 
-            <body class="bg-body-tertiary">
-                <div class="container mt-5">
-                    <div class="row">
-                        <div class="col-md-6 col-12 mx-auto">
-                            <a href="/admin/user" class="btn btn-outline-secondary"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-                                </svg></a>
-                            <h1 class="text-center">Create a user</h1>
-                            <%--@elvariable id="newUser" type="" --%>
-                                <form:form action="/admin/user/create" method="post" modelAttribute="newUser">
-                                    <div class="mb-3">
-                                        <label class="form-label">Email:</label>
-                                        <form:input type="email" class="form-control" path="email" />
+            <body class="sb-nav-fixed">
+                <jsp:include page="../layout/header.jsp" />
+                <div id="layoutSidenav">
+                    <jsp:include page="../layout/sidebar.jsp" />
+                    <div id="layoutSidenav_content" class="bg-light">
+                        <main>
+                            <div class="container-fluid px-4">
+                                <h1 class="mt-4">Manage Users</h1>
+                                <ol class="breadcrumb mb-4">
+                                    <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">User</li>
+                                </ol>
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12 mx-auto">
+                                            <a href="/admin/user" class="btn btn-outline-secondary"><i
+                                                    class="fa-solid fa-caret-left fa-xl"></i></a>
+                                            <h1 class="text-center">Create a user</h1>
+                                            <%--@elvariable id="newUser" type="" --%>
+                                                <form:form action="/admin/user/create" method="post"
+                                                    modelAttribute="newUser">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Email:</label>
+                                                        <form:input type="email" class="form-control" path="email" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Password:</label>
+                                                        <form:input type="password" class="form-control"
+                                                            path="password" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Full Name:</label>
+                                                        <form:input type="text" class="form-control" path="fullName" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Phone number:</label>
+                                                        <form:input type="text" class="form-control" path="phone" />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Address:</label>
+                                                        <form:input type="text" class="form-control" path="address" />
+                                                    </div>
+                                                    <button type="submit"
+                                                        class="btn btn-primary form-control">Create</button>
+                                                </form:form>
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Password:</label>
-                                        <form:input type="password" class="form-control" path="password" />
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Full Name:</label>
-                                        <form:input type="text" class="form-control" path="fullName" />
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Phone number:</label>
-                                        <form:input type="text" class="form-control" path="phone" />
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Address:</label>
-                                        <form:input type="text" class="form-control" path="address" />
-                                    </div>
-                                    <button type="submit" class="btn btn-primary form-control">Create</button>
-                                </form:form>
-                        </div>
+                                </div>
+                            </div>
+                        </main>
+                        <jsp:include page="../layout/footer.jsp" />
+
                     </div>
                 </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                    crossorigin="anonymous"></script>
+                <script src="/js/scripts.js"></script>
             </body>
 
             </html>

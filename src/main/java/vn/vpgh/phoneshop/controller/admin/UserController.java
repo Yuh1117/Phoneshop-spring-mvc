@@ -1,4 +1,4 @@
-package vn.vpgh.phoneshop.controller;
+package vn.vpgh.phoneshop.controller.admin;
 
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -29,7 +29,7 @@ public class UserController {
     public String getUserPage(Model model) {
         List<User> users = this.userService.getAllUsers();
         model.addAttribute("users", users);
-        return "/admin/user/table-user";
+        return "/admin/user/show";
     }
 
     @RequestMapping("/admin/user/{id}")

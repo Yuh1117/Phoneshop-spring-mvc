@@ -1,16 +1,22 @@
 package vn.vpgh.phoneshop.service;
 
+import org.eclipse.tags.shaded.org.apache.regexp.recompile;
 import org.springframework.stereotype.Service;
+
+import vn.vpgh.phoneshop.domain.Role;
 import vn.vpgh.phoneshop.domain.User;
+import vn.vpgh.phoneshop.repository.RoleRepository;
 import vn.vpgh.phoneshop.repository.UserRepository;
 import java.util.List;
 
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
     }
 
     public User handleSaveUser(User user) {
@@ -31,5 +37,9 @@ public class UserService {
 
     public void deleteUserById(long id) {
         this.userRepository.deleteById(id);
+    }
+
+    public Role getRoleByName(String name){
+        return this.roleRepository.findByName(name);
     }
 }

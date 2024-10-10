@@ -1,6 +1,8 @@
 package vn.vpgh.phoneshop.controller.admin;
 
 import java.util.List;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +16,12 @@ import vn.vpgh.phoneshop.service.UserService;
 public class UserController {
     private final UserService userService;
     private final UploadService uploadService;
+    private PasswordEncoder passwordEncoder;
 
-    public UserController(UserService userService, UploadService uploadService) {
+    public UserController(UserService userService, UploadService uploadService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.uploadService = uploadService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @RequestMapping("/")
@@ -49,6 +53,10 @@ public class UserController {
     public String handleCreateUserPage(Model model, @ModelAttribute("newUser") User user,
             @RequestParam("avatarFile") MultipartFile file) {
         String avatarName = this.uploadService.handleUploadFile(file, "avatar");
+        String hashPassword = this.passwordEncoder.encode(user.getPassword());
+        user.setAvatar(avatarName);
+        user.setPassword(hashPassword);
+        user.setRole(this.userService.getRoleByName(user.getRole().getName()));
         this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
     }

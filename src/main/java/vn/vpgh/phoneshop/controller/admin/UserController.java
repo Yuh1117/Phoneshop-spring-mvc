@@ -4,20 +4,20 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
 import vn.vpgh.phoneshop.domain.User;
-import vn.vpgh.phoneshop.repository.UserRepository;
+import vn.vpgh.phoneshop.service.UploadService;
 import vn.vpgh.phoneshop.service.UserService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class UserController {
     private final UserService userService;
+    private final UploadService uploadService;
 
-    public UserController(UserService userService, UserRepository userRepository) {
+    public UserController(UserService userService, UploadService uploadService) {
         this.userService = userService;
+        this.uploadService = uploadService;
     }
 
     @RequestMapping("/")
@@ -46,7 +46,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
-    public String handleCreateUserPage(Model model, @ModelAttribute("newUser") User user) {
+    public String handleCreateUserPage(Model model, @ModelAttribute("newUser") User user,
+            @RequestParam("avatarFile") MultipartFile file) {
+        String avatarName = this.uploadService.handleUploadFile(file, "avatar");
         this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
     }

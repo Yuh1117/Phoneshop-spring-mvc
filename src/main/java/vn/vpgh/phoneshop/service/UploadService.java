@@ -28,8 +28,7 @@ public class UploadService {
 
             // Create the file on server
             finalName = System.currentTimeMillis() + "-" + file.getOriginalFilename();
-            File serverFile = new File(dir.getAbsolutePath() + File.separator +
-                    +System.currentTimeMillis() + "-" + file.getOriginalFilename());
+            File serverFile = new File(dir.getAbsolutePath() + File.separator + finalName);
 
             BufferedOutputStream stream = new BufferedOutputStream(
                     new FileOutputStream(serverFile));
@@ -39,5 +38,9 @@ public class UploadService {
             e.printStackTrace();
         }
         return finalName;
+    }
+
+    public ServletContext getServletContext() {
+        return servletContext;
     }
 }

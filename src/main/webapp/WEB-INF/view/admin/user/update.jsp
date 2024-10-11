@@ -55,6 +55,23 @@
                                                         <label class="form-label">Address:</label>
                                                         <form:input type="text" class="form-control" path="address" />
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Role:</label>
+                                                        <form:select class="form-select" path="role.name">
+                                                            <c:choose>
+                                                                <c:when test="${currentUser.role.name == 'Admin'}">
+                                                                    <option selected="selected" value="Admin">Admin
+                                                                    </option>
+                                                                    <option value="User">User</option>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <option value="Admin">Admin</option>
+                                                                    <option selected="selected" value="User">User
+                                                                    </option>
+                                                                </c:otherwise>
+                                                            </c:choose>
+                                                        </form:select>
+                                                    </div>
                                                     <button type="submit"
                                                         class="btn btn-primary form-control">Save</button>
                                                 </form:form>

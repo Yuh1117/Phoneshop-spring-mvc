@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import jakarta.servlet.http.HttpServletRequest;
 import vn.vpgh.phoneshop.domain.User;
 import vn.vpgh.phoneshop.service.UploadService;
 import vn.vpgh.phoneshop.service.UserService;
@@ -37,9 +39,15 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user/{id}")
-    public String getUserDetailPage(Model model, @PathVariable long id) {
+    public String getUserDetailPage(Model model, @PathVariable long id, Model model2, HttpServletRequest request) {
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
+        String baseUrl = ServletUriComponentsBuilder.fromRequestUri(request)
+                .replacePath(null)
+                .build()
+                .toUriString();
+        String avatarPath = baseUrl + "/images/avatar/";
+        model2.addAttribute("avatarPath", avatarPath);
         return "/admin/user/user-detail";
     }
 
@@ -75,6 +83,7 @@ public class UserController {
             user.setFullName(currentUser.getFullName());
             user.setPhone(currentUser.getPhone());
             user.setAddress(currentUser.getAddress());
+            user.setRole(this.userService.getRoleByName(currentUser.getRole().getName()));
             this.userService.handleSaveUser(user);
         }
         return "redirect:/admin/user";

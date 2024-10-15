@@ -7,7 +7,7 @@
 
             <head>
                 <meta charset="utf-8">
-                <title>Fruitables - Vegetable Website Template</title>
+                <title>Detail Product</title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport">
                 <meta content="" name="keywords">
                 <meta content="" name="description">
@@ -71,12 +71,7 @@
 
                 <!-- Single Page Header start -->
                 <div class="container-fluid page-header py-5">
-                    <h1 class="text-center text-white display-6">Shop Detail</h1>
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active text-white">Shop Detail</li>
-                    </ol>
+                    <h1 class="text-center display-6" style="color: #3d5a80;">Sản phẩm</h1>
                 </div>
                 <!-- Single Page Header End -->
 
@@ -90,15 +85,15 @@
                                     <div class="col-lg-6">
                                         <div class="border rounded">
                                             <a href="#">
-                                                <img src="/client/img/single-item.jpg" class="img-fluid rounded"
+                                                <img src="/client/img/fruite-item-1.jpg" class="img-fluid rounded"
                                                     alt="Image">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h4 class="fw-bold mb-3">Brocoli</h4>
-                                        <p class="mb-3">Category: Vegetables</p>
-                                        <h5 class="fw-bold mb-3">3,35 $</h5>
+                                        <h4 class="fw-bold mb-3">Iphone 16 Promax</h4>
+                                        <p class="mb-3">Loại: Điện thoại</p>
+                                        <h5 class="fw-bold mb-3">999$</h5>
                                         <div class="d-flex mb-4">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -128,7 +123,7 @@
                                         </div>
                                         <a href="#"
                                             class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-                                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                class="fa fa-shopping-bag me-2 text-primary"></i> Thêm vào giỏ</a>
                                     </div>
                                     <div class="col-lg-12">
                                         <nav>
@@ -136,11 +131,11 @@
                                                 <button class="nav-link active border-white border-bottom-0"
                                                     type="button" role="tab" id="nav-about-tab" data-bs-toggle="tab"
                                                     data-bs-target="#nav-about" aria-controls="nav-about"
-                                                    aria-selected="true">Description</button>
+                                                    aria-selected="true">Mô tả</button>
                                                 <button class="nav-link border-white border-bottom-0" type="button"
                                                     role="tab" id="nav-mission-tab" data-bs-toggle="tab"
                                                     data-bs-target="#nav-mission" aria-controls="nav-mission"
-                                                    aria-selected="false">Reviews</button>
+                                                    aria-selected="false">Đánh giá</button>
                                             </div>
                                         </nav>
                                         <div class="tab-content mb-5">
@@ -275,7 +270,7 @@
                                 <div class="row g-4 fruite">
                                     <div class="col-lg-12">
                                         <div class="mb-4">
-                                            <h4>Categories</h4>
+                                            <h4>Danh mục</h4>
                                             <ul class="list-unstyled fruite-categorie">
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
@@ -322,17 +317,17 @@
 
 
                 <!-- Back to Top -->
-                <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i
+                <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top text-white"><i
                         class="fa fa-arrow-up"></i></a>
 
 
                 <!-- JavaScript Libraries -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="lib/easing/easing.min.js"></script>
-                <script src="lib/waypoints/waypoints.min.js"></script>
-                <script src="lib/lightbox/js/lightbox.min.js"></script>
-                <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+                <script src="/client/lib/easing/easing.min.js"></script>
+                <script src="/client/lib/waypoints/waypoints.min.js"></script>
+                <script src="/client/lib/lightbox/js/lightbox.min.js"></script>
+                <script src="/client/lib/owlcarousel/owl.carousel.min.js"></script>
 
                 <!-- Template Javascript -->
                 <script src="/client/js/main.js"></script>

@@ -11,13 +11,14 @@
                 <title>Manage Products</title>
                 <link href="/css/styles.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
             </head>
 
             <body class="sb-nav-fixed">
                 <jsp:include page="../layout/header.jsp" />
                 <div id="layoutSidenav">
                     <jsp:include page="../layout/sidebar.jsp" />
-                    <div id="layoutSidenav_content">
+                    <div id="layoutSidenav_content" class="bg-light">
                         <main>
                             <div class="container-fluid px-4">
                                 <h1 class="mt-4">Manage Products</h1>
@@ -25,9 +26,48 @@
                                     <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item active">Product</li>
                                 </ol>
-                               <div>
-                                Product
-                               </div>
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="col-12 mx-auto">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h2>Table Product</h2>
+                                                <a href="/admin/product/create" class="btn btn-primary">Create a
+                                                    product</a>
+                                            </div>
+                                            <div class="p-3 my-3 border rounded-5 bg-white">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ID</th>
+                                                            <th>Name</th>
+                                                            <th>Price</th>
+                                                            <th>Factory</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="align-middle">
+                                                        <c:forEach var="product" items="${products}">
+                                                            <tr>
+                                                                <td>${product.id}</td>
+                                                                <td>${product.name}</td>
+                                                                <td>${product.price}</td>
+                                                                <td>${product.factory}</td>
+                                                                <td>
+                                                                    <a href="/admin/product/${product.id}"
+                                                                        class="btn btn-success">View</a>
+                                                                    <a href="/admin/product/update/${product.id}"
+                                                                        class="btn btn-warning  mx-2">Update</a>
+                                                                    <a href="/admin/product/delete/${product.id}"
+                                                                        class="btn btn-danger">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                        </c:forEach>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </main>
                         <jsp:include page="../layout/footer.jsp" />

@@ -56,7 +56,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
-    public String handleCreateUserPage(Model model, @ModelAttribute("newUser") @Valid User user, BindingResult newUserBindingResult,
+    public String handleCreateUser(Model model, @ModelAttribute("newUser") @Valid User user, BindingResult newUserBindingResult,
                                        @RequestParam("avatarFile") MultipartFile file) {
         List<FieldError> errors = newUserBindingResult.getFieldErrors();
         for (FieldError error : errors) {

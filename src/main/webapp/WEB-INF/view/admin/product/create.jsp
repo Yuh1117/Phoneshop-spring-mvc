@@ -47,29 +47,58 @@
                                                     modelAttribute="newProduct" class="row"
                                                     enctype="multipart/form-data">
                                                     <div class="mb-3 col-12 col-md-6">
+                                                        <c:set var="nameError">
+                                                            <form:errors path="name" cssClass="invalid-feedback" />
+                                                        </c:set>
                                                         <label class="form-label">Name:</label>
-                                                        <form:input type="text" class="form-control" path="name" />
+                                                        <form:input type="text"
+                                                            class="form-control ${not empty nameError ? 'is-invalid' : '' }"
+                                                            path="name" />
+                                                        ${nameError}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
+                                                        <c:set var="priceError">
+                                                            <form:errors path="price" cssClass="invalid-feedback" />
+                                                        </c:set>
                                                         <label class="form-label">Price:</label>
-                                                        <form:input type="number" class="form-control"
+                                                        <form:input type="number"
+                                                            class="form-control ${not empty priceError ? 'is-invalid' : '' }"
                                                             path="price" />
+                                                        ${priceError}
                                                     </div>
                                                     <div class="mb-3">
+                                                        <c:set var="detailDescError">
+                                                            <form:errors path="detailDesc"
+                                                                cssClass="invalid-feedback" />
+                                                        </c:set>
                                                         <label class="form-label">Detail description:</label>
-                                                        <form:textarea type="text" class="form-control" path="detailDesc" />
+                                                        <form:textarea type="text"
+                                                            class="form-control ${not empty detailDescError ? 'is-invalid' : '' }"
+                                                            path="detailDesc" />
+                                                        ${detailDescError}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
+                                                        <c:set var="shortDescError">
+                                                            <form:errors path="shortDesc" cssClass="invalid-feedback" />
+                                                        </c:set>
                                                         <label class="form-label">Short description:</label>
-                                                        <form:input type="text" class="form-control" path="shortDesc" />
+                                                        <form:input type="text"
+                                                            class="form-control ${not empty shortDescError ? 'is-invalid' : '' }"
+                                                            path="shortDesc" />
+                                                        ${shortDescError}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
+                                                        <c:set var="quantityError">
+                                                            <form:errors path="quantity" cssClass="invalid-feedback" />
+                                                        </c:set>
                                                         <label class="form-label">Quantity:</label>
-                                                        <form:input type="number" class="form-control" path="quantity" />
+                                                        <form:input type="number" class="form-control ${not empty quantityError ? 'is-invalid' : '' }"
+                                                            path="quantity" />
+                                                            ${quantityError}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label class="form-label">Factory:</label>
-                                                        <form:select class="form-select" path="target">
+                                                        <form:select class="form-select" path="factory">
                                                             <option value="Apple">Apple</option>
                                                             <option value="Samsung">Samsung</option>
                                                             <option value="Xiaomi">Xiaomi</option>
@@ -79,7 +108,7 @@
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label class="form-label">Target:</label>
-                                                        <form:select class="form-select" path="factory">
+                                                        <form:select class="form-select" path="target">
                                                             <option value="Choi-game">Chơi game</option>
                                                             <option value="Chup-anh">Chụp ảnh</option>
                                                             <option value="Pin-trau">Pin trâu</option>

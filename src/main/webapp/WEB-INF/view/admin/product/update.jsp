@@ -111,21 +111,41 @@
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label class="form-label">Factory:</label>
                                                         <form:select class="form-select" path="factory">
-                                                            <option value="Apple"> Apple</option>
-                                                            <option value="Samsung">Samsung</option>
-                                                            <option value="Xiaomi">Xiaomi</option>
-                                                            <option value="Oppo">Oppo</option>
-                                                            <option value="Asus">Asus</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Apple' ? 'selected' : ''}" />
+                                                            value="Apple"> Apple</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Samsung' ? 'selected' : ''}" />
+                                                            value="Samsung">Samsung</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Xiaomi' ? 'selected' : ''}" />
+                                                            value="Xiaomi">Xiaomi</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Oppo' ? 'selected' : ''}" />
+                                                            value="Oppo">Oppo</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Asus' ? 'selected' : ''}" />
+                                                            value="Asus">Asus</option>
                                                         </form:select>
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label class="form-label">Target:</label>
                                                         <form:select class="form-select" path="target">
-                                                            <option value="Chơi game">Chơi game</option>
-                                                            <option value="Chụp ảnh">Chụp ảnh</option>
-                                                            <option value="Pin trâu">Pin trâu</option>
-                                                            <option value="Dung lượng lớn">Dung lượng lớn</option>
-                                                            <option value="Nhỏ gọn">Nhỏ gọn</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.target == 'Chơi game' ? 'selected' : ''}" />
+                                                            value="Chơi game">Chơi game</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.target == 'Chụp ảnh' ? 'selected' : ''}" />
+                                                            value="Chụp ảnh">Chụp ảnh</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.target == 'Pin trâu' ? 'selected' : ''}" />
+                                                            value="Pin trâu">Pin trâu</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.target == 'Dung lượng lớn' ? 'selected' : ''}" />
+                                                            value="Dung lượng lớn">Dung lượng lớn</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.target == 'Nhỏ gọn' ? 'selected' : ''}" />
+                                                            value="Nhỏ gọn">Nhỏ gọn</option>
                                                         </form:select>
                                                     </div>
                                                     <div class="mb-3">

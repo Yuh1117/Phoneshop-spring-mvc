@@ -30,7 +30,7 @@
                                     <div class="row">
                                         <div class="col-12 mx-auto">
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h2>Table Product</h2>
+                                                <h2>Table products</h2>
                                                 <a href="/admin/product/create" class="btn btn-primary">Create a
                                                     product</a>
                                             </div>

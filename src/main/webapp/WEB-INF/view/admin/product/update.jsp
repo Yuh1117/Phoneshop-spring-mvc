@@ -15,7 +15,14 @@
                 <script>
                     $(document).ready(() => {
                         const productImgFile = $("#productImgFile");
-                        avatarFile.change(function (e) {
+                        const orgImage = "${currentProduct.image}"
+                        if (orgImage) {
+                            const urlImg = "/image/product" + orgImage;
+                            $("imgPreview").attr("src", urlImg)
+                            $("#imgPreview").css({ "display": "block" });
+                        }
+
+                        productImgFile.change(function (e) {
                             const imgURL = URL.createObjectURL(e.target.files[0]);
                             $("#imgPreview").attr("src", imgURL);
                             $("#imgPreview").css({ "display": "block" });
@@ -41,11 +48,15 @@
                                         <div class="col-md-6 col-12 mx-auto">
                                             <a href="/admin/product" class="btn btn-outline-secondary"><i
                                                     class="fa-solid fa-caret-left fa-xl"></i></a>
-                                            <h1 class="text-center">Create a product</h1>
-                                            <%--@elvariable id="newProduct" type="" --%>
-                                                <form:form action="/admin/product/create" method="post"
-                                                    modelAttribute="newProduct" class="row"
+                                            <h1 class="text-center">Update information</h1>
+                                            <%--@elvariable id="currentUser" type="" --%>
+                                                <form:form action="/admin/product/update" method="post"
+                                                    modelAttribute="currentProduct" class="row"
                                                     enctype="multipart/form-data">
+                                                    <div class="mb-3 d-none">
+                                                        <label class="form-label">ID:</label>
+                                                        <form:input type="text" class="form-control" path="id" />
+                                                    </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <c:set var="nameError">
                                                             <form:errors path="name" cssClass="invalid-feedback" />
@@ -92,14 +103,15 @@
                                                             <form:errors path="quantity" cssClass="invalid-feedback" />
                                                         </c:set>
                                                         <label class="form-label">Quantity:</label>
-                                                        <form:input type="number" class="form-control ${not empty quantityError ? 'is-invalid' : '' }"
+                                                        <form:input type="number"
+                                                            class="form-control ${not empty quantityError ? 'is-invalid' : '' }"
                                                             path="quantity" />
-                                                            ${quantityError}
+                                                        ${quantityError}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label class="form-label">Factory:</label>
                                                         <form:select class="form-select" path="factory">
-                                                            <option value="Apple">Apple</option>
+                                                            <option value="Apple"> Apple</option>
                                                             <option value="Samsung">Samsung</option>
                                                             <option value="Xiaomi">Xiaomi</option>
                                                             <option value="Oppo">Oppo</option>
@@ -122,12 +134,13 @@
                                                             accept=".png, .jpg, .jpeg" name="productImgFile" />
                                                     </div>
                                                     <div class="col-12 mb-3" style="max-width: 80%;">
-                                                        <img style="display: none; width: 100%;" alt="image preview"
+                                                        <img src="/images/product/${currentProduct.image}"
+                                                            style="display:none; width: 100%;" alt="image preview"
                                                             id="imgPreview" />
                                                     </div>
                                                     <div class="mb-3">
                                                         <button type="submit"
-                                                            class="btn btn-primary form-control">Create</button>
+                                                            class="btn btn-warning form-control">Save</button>
                                                     </div>
                                                 </form:form>
                                         </div>

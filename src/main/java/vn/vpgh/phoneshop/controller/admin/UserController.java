@@ -10,9 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import jakarta.servlet.http.HttpServletRequest;
 import vn.vpgh.phoneshop.domain.User;
 import vn.vpgh.phoneshop.service.UploadService;
 import vn.vpgh.phoneshop.service.UserService;
@@ -37,16 +35,10 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user/{id}")
-    public String getUserDetailPage(Model model, @PathVariable long id, Model model2, HttpServletRequest request) {
+    public String getUserDetailPage(Model model, @PathVariable long id) {
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
-        String baseUrl = ServletUriComponentsBuilder.fromRequestUri(request)
-                .replacePath(null)
-                .build()
-                .toUriString();
-        String avatarPath = baseUrl + "/images/avatar/";
-        model2.addAttribute("avatarPath", avatarPath);
-        return "/admin/user/user-detail";
+        return "/admin/user/detail";
     }
 
     @RequestMapping("/admin/user/create")

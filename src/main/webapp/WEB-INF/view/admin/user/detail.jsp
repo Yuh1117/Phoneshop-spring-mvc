@@ -57,9 +57,9 @@
                                                         </li>
                                                         <li class="list-group-item">
                                                             <span class="fw-medium">Avatar:</span>
-                                                            <div style="width: 100px">
-                                                                <img src="${avatarPath.concat(user.avatar)}" alt="Avatar"
-                                                                    class="img-thumbnail" />
+                                                            <div>
+                                                                <img src="/images/avatar/${user.avatar}" alt="Avatar"
+                                                                    class="img-thumbnail" style="width: 10rem"/>
                                                             </div>
                                                         </li>
                                                     </ul>

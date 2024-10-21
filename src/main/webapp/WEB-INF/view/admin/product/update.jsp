@@ -124,8 +124,23 @@
                                                                 value="${currentProduct.factory == 'Oppo' ? 'selected' : ''}" />
                                                             value="Oppo">Oppo</option>
                                                             <option <c:out
-                                                                value="${currentProduct.factory == 'Asus' ? 'selected' : ''}" />
-                                                            value="Asus">Asus</option>
+                                                                value="${currentProduct.factory == 'Google' ? 'selected' : ''}" />
+                                                            value="Google">Google</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Oneplus' ? 'selected' : ''}" />
+                                                            value="Oneplus">Oneplus</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Realme' ? 'selected' : ''}" />
+                                                            value="Realme">Realme</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Vivo' ? 'selected' : ''}" />
+                                                            value="Vivo">Vivo</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Nokia' ? 'selected' : ''}" />
+                                                            value="Nokia">Nokia</option>
+                                                            <option <c:out
+                                                                value="${currentProduct.factory == 'Sony' ? 'selected' : ''}" />
+                                                            value="Sony">Sony</option>
                                                         </form:select>
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">

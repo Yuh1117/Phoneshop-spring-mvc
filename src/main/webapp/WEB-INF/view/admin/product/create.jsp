@@ -92,9 +92,10 @@
                                                             <form:errors path="quantity" cssClass="invalid-feedback" />
                                                         </c:set>
                                                         <label class="form-label">Quantity:</label>
-                                                        <form:input type="number" class="form-control ${not empty quantityError ? 'is-invalid' : '' }"
+                                                        <form:input type="number"
+                                                            class="form-control ${not empty quantityError ? 'is-invalid' : '' }"
                                                             path="quantity" />
-                                                            ${quantityError}
+                                                        ${quantityError}
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">
                                                         <label class="form-label">Factory:</label>
@@ -103,7 +104,12 @@
                                                             <option value="Samsung">Samsung</option>
                                                             <option value="Xiaomi">Xiaomi</option>
                                                             <option value="Oppo">Oppo</option>
-                                                            <option value="Asus">Asus</option>
+                                                            <option value="Asus">Google</option>
+                                                            <option value="Asus">Oneplus</option>
+                                                            <option value="Asus">Realme</option>
+                                                            <option value="Asus">Vivo</option>
+                                                            <option value="Asus">Nokia</option>
+                                                            <option value="Asus">Sony</option>
                                                         </form:select>
                                                     </div>
                                                     <div class="mb-3 col-12 col-md-6">

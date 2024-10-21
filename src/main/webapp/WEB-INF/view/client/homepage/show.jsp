@@ -92,174 +92,30 @@
                                 <div class="row g-4">
                                     <div class="col-lg-12">
                                         <div class="row g-4">
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-1.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Iphone 16 Promax</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$999</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
+                                            <c:forEach var="product" items="${products}">
+                                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                                    <div class="rounded position-relative fruite-item border border-2">
+                                                        <div class="fruite-img p-3">
+                                                            <img src="/images/product/${product.image}"
+                                                                class="img-fluid w-100 rounded-top" alt="">
+                                                        </div>
+                                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                                                            style="top: 10px; left: 10px;">Điện thoại</div>
+                                                        <div class="p-4 rounded-bottom">
+                                                            <h6>${product.name}</h6>
+                                                            <p>${product.shortDesc}</p>
+                                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                                <p class="text-dark fs-5 fw-bold mb-0">${product.price}
+                                                                </p>
+                                                                <a href="#"
+                                                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                                        class="fa fa-shopping-bag me-2 text-primary"></i>
+                                                                    Thêm vào giỏ</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-2.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Samsung Galaxy S24 Ultra</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$199</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-1.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Iphone 16 Promax</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$499</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-2.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Samsung Galaxy S24 Ultra</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$199</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-1.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Iphone 16 Promax</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$499</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-2.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Samsung Galaxy S24 Ultra</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$199</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-1.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Iphone 16 Promax</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$499</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="rounded position-relative fruite-item border border-2">
-                                                    <div class="fruite-img p-3">
-                                                        <img src="/client/img/fruite-item-2.jpg"
-                                                            class="img-fluid w-100 rounded-top" alt="">
-                                                    </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Điện thoại</div>
-                                                    <div class="p-4 rounded-bottom">
-                                                        <h6>Samsung Galaxy S24 Ultra</h6>
-                                                        <p>...</p>
-                                                        <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <p class="text-dark fs-5 fw-bold mb-0">$199</p>
-                                                            <a href="#"
-                                                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                                                    class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                Thêm vào giỏ</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </c:forEach>
                                         </div>
                                     </div>
                                 </div>

@@ -72,7 +72,7 @@
 
                     <!-- Single Page Header start -->
                     <div class="container-fluid page-header py-5">
-                        <h1 class="text-center display-6" style="color: #3d5a80;">Sản phẩm</h1>
+                        <h1 class="text-center display-6" style="color: #3d5a80;">Chi tiết sản phẩm</h1>
                     </div>
                     <!-- Single Page Header End -->
 

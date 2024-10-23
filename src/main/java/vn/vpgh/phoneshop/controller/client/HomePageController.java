@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import vn.vpgh.phoneshop.domain.Product;
 import vn.vpgh.phoneshop.service.ProductService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class HomePageController {
@@ -21,5 +23,11 @@ public class HomePageController {
         model.addAttribute("products", products);
         return "/client/homepage/show";
     }
+
+    @GetMapping("/register")
+    public String getRegisterPage(Model model) {
+        return "/client/auth/register";
+    }
+    
 
 }

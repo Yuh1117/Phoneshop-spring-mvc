@@ -27,7 +27,8 @@
                                                 <h3 class="text-center font-weight-light my-4">Tạo tài khoản</h3>
                                             </div>
                                             <div class="card-body">
-                                                <form:form action="register" method="post" modelAttribute="registerUser">
+                                                <form:form action="/register" method="post"
+                                                    modelAttribute="registerUser">
                                                     <div class="row mb-3">
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
@@ -72,8 +73,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="mt-4 mb-0">
-                                                        <div class="d-grid"><a class="btn btn-primary btn-block"
-                                                                href="login.html">Tạo tài khoản</a></div>
+                                                        <button type="submit"
+                                                            class="btn btn-primary btn-block form-control">Tạo tài
+                                                            khoản</button>
                                                     </div>
                                                 </form:form>
                                             </div>

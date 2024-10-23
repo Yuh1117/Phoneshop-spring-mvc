@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import vn.vpgh.phoneshop.domain.Role;
 import vn.vpgh.phoneshop.domain.User;
+import vn.vpgh.phoneshop.domain.dto.RegisterDTO;
 import vn.vpgh.phoneshop.repository.RoleRepository;
 import vn.vpgh.phoneshop.repository.UserRepository;
 import java.util.List;
@@ -38,7 +39,15 @@ public class UserService {
         this.userRepository.deleteById(id);
     }
 
-    public Role getRoleByName(String name){
+    public Role getRoleByName(String name) {
         return this.roleRepository.findByName(name);
+    }
+
+    public User registerDTOtoUser(RegisterDTO registerUser) {
+        User user = new User();
+        user.setFullName(registerUser.getLastName() + " " + registerUser.getFirstName());
+        user.setEmail(registerUser.getEmail());
+        user.setPassword(registerUser.getPassword());
+        return user;
     }
 }

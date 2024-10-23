@@ -1,25 +1,29 @@
 package vn.vpgh.phoneshop.controller.client;
 
 import java.util.List;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.ui.Model;
 import vn.vpgh.phoneshop.domain.Product;
+import vn.vpgh.phoneshop.domain.User;
 import vn.vpgh.phoneshop.domain.dto.RegisterDTO;
 import vn.vpgh.phoneshop.service.ProductService;
-import org.springframework.web.bind.annotation.RequestParam;
+import vn.vpgh.phoneshop.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-
 
 @Controller
 public class HomePageController {
     private final ProductService productService;
+    private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
 
-    public HomePageController(ProductService productService) {
+    public HomePageController(ProductService productService, UserService userService, PasswordEncoder passwordEncoder) {
         this.productService = productService;
+        this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/")
@@ -37,10 +41,12 @@ public class HomePageController {
 
     @PostMapping("/register")
     public String handleRegister(@ModelAttribute("registerUser") RegisterDTO registerUser) {
-        
-        return "/client/auth/register";
+        User user = this.userService.registerDTOtoUser(registerUser);
+        String hashPassword = this.passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashPassword);
+        user.setRole(this.userService.getRoleByName("User"));
+        this.userService.handleSaveUser(user);
+        return "redirect:/register";
     }
-    
-    
 
 }

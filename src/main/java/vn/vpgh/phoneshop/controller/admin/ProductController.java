@@ -51,14 +51,14 @@ public class ProductController {
 
     @PostMapping("/admin/product/create")
     public String handleCreateProduct(Model model, @ModelAttribute("newProduct") @Valid Product product,
-            BindingResult newUserBindingResult, @RequestParam("productImgFile") MultipartFile file) {
-        List<FieldError> errors = newUserBindingResult.getFieldErrors();
+            BindingResult newProductBindingResult, @RequestParam("productImgFile") MultipartFile file) {
+        List<FieldError> errors = newProductBindingResult.getFieldErrors();
         for (FieldError error : errors) {
             System.out.println(error.getField() + " - " + error.getDefaultMessage());
         }
 
         // validate
-        if (newUserBindingResult.hasErrors()) {
+        if (newProductBindingResult.hasErrors()) {
             return "/admin/product/create";
         }
 
@@ -77,7 +77,7 @@ public class ProductController {
     }
 
     @PostMapping("/admin/product/update")
-    public String handleUpdateUser(Model model, @ModelAttribute("currentProduct") @Valid Product currentProduct,
+    public String handleUpdateProduct(Model model, @ModelAttribute("currentProduct") @Valid Product currentProduct,
             BindingResult currentProductBindingResult, @RequestParam("productImgFile") MultipartFile file) {
         List<FieldError> errors = currentProductBindingResult.getFieldErrors();
         for (FieldError error : errors) {

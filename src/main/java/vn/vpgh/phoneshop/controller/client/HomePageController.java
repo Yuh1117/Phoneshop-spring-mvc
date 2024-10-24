@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 
 import vn.vpgh.phoneshop.domain.Product;
 import vn.vpgh.phoneshop.domain.User;
@@ -47,11 +46,6 @@ public class HomePageController {
     @PostMapping("/register")
     public String handleRegister(@ModelAttribute("registerUser") @Valid RegisterDTO registerUser,
             BindingResult bindingResult) {
-        List<FieldError> errors = bindingResult.getFieldErrors();
-        for (FieldError error : errors) {
-            System.out.println(error.getField() + " - " + error.getDefaultMessage());
-        }
-
         // validate
         if (bindingResult.hasErrors()) {
             return "/client/auth/register";

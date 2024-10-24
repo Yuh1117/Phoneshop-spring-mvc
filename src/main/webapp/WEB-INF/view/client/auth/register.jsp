@@ -24,7 +24,7 @@
                                     <div class="col-lg-7">
                                         <div class="card mt-5 shadow">
                                             <div class="card-header">
-                                                <h3 class="text-center font-weight-light my-4">Tạo tài khoản</h3>
+                                                <h3 class="text-center font-weight-light my-4">Đăng ký</h3>
                                             </div>
                                             <div class="card-body">
                                                 <form:form action="/register" method="post"
@@ -48,9 +48,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-floating mb-3">
-                                                        <form:input class="form-control" id="inputEmail" type="email"
-                                                            placeholder="name@example.com" path="email" />
+                                                        <c:set var="emailError">
+                                                            <form:errors path="email" cssClass="invalid-feedback" />
+                                                        </c:set>
+                                                        <form:input
+                                                            class="form-control ${not empty emailError ? 'is-invalid' : '' }"
+                                                            id="inputEmail" type="email" placeholder="name@example.com"
+                                                            path="email" />
                                                         <label for="inputEmail">Email </label>
+                                                        ${emailError}
                                                     </div>
                                                     <div class="row mb-3">
                                                         <div class="col-md-6">
@@ -63,12 +69,18 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating mb-3 mb-md-0">
-                                                                <form:input class="form-control"
+                                                                <c:set var="confirmPasswordError">
+                                                                    <form:errors path="confirmPassword"
+                                                                        cssClass="invalid-feedback" />
+                                                                </c:set>
+                                                                <form:input
+                                                                    class="form-control  ${not empty confirmPasswordError ? 'is-invalid' : '' }"
                                                                     id="inputPasswordConfirm" type="password"
                                                                     placeholder="Confirm password"
                                                                     path="confirmPassword" />
                                                                 <label for="inputPasswordConfirm">Nhập lại mật
                                                                     khẩu</label>
+                                                                ${confirmPasswordError}
                                                             </div>
                                                         </div>
                                                     </div>

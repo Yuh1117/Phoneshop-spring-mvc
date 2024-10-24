@@ -1,5 +1,8 @@
 package vn.vpgh.phoneshop.domain.dto;
 
+import vn.vpgh.phoneshop.service.validator.RegisterChecked;
+
+@RegisterChecked
 public class RegisterDTO {
     private String firstName;
     private String lastName;

@@ -17,6 +17,7 @@ import vn.vpgh.phoneshop.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomePageController {
@@ -57,6 +58,11 @@ public class HomePageController {
         user.setRole(this.userService.getRoleByName("User"));
         this.userService.handleSaveUser(user);
         return "redirect:/register";
+    }
+
+    @GetMapping("/login")
+    public String getLoginPage(Model model) {
+        return "/client/auth/login";
     }
 
 }

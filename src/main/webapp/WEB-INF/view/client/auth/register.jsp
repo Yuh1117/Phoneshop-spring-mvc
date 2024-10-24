@@ -31,7 +31,7 @@
                                                     modelAttribute="registerUser">
                                                     <div class="row mb-3">
                                                         <div class="col-md-6">
-                                                            <div class="form-floating">
+                                                            <div class="form-floating mb-3 mb-md-0">
                                                                 <form:input class="form-control" id="inputLastName"
                                                                     type="text" placeholder="Enter your last name"
                                                                     path="lastName" />
@@ -39,7 +39,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <div class="form-floating mb-3 mb-md-0">
+                                                            <div class="form-floating mb-md-0">
                                                                 <form:input class="form-control" id="inputFirstName"
                                                                     type="text" placeholder="Enter your first name"
                                                                     path="firstName" />
@@ -92,7 +92,7 @@
                                                 </form:form>
                                             </div>
                                             <div class="card-footer text-center py-3">
-                                                <div class="small"><a href="login.html">Bạn đã có tài khoản? Đăng
+                                                <div class="small"><a href="/login">Bạn đã có tài khoản? Đăng
                                                         nhập</a>
                                                 </div>
                                             </div>
